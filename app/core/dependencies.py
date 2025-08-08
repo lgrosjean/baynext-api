@@ -35,7 +35,7 @@ def get_current_user(
         raise MissingApiKeyError
 
     response = (
-        supabase.table("apiKeys")
+        supabase.table("apiKey")
         .select("*")
         .eq("key", key.credentials)
         .single()

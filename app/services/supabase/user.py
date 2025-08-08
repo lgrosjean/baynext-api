@@ -19,4 +19,4 @@ class UserService:
     def get_user_by_id(self, user_id: str) -> User | None:
         """Get a user by their ID."""
         response: UserResponse = self.supabase.auth.admin.get_user_by_id(user_id)
-        return User(**response.user)
+        return User(**response.user.model_dump())
