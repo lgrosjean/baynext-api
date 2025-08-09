@@ -20,6 +20,12 @@ app = FastAPI(
     ),
     version=settings.VERSION,
     swagger_ui_parameters={"defaultModelsExpandDepth": -1},
+    servers=[
+        {
+            "url": "https://baynext-api.onrender.com",
+            "description": "Production environment",
+        },
+    ],
 )
 
 # Include routers after middleware
